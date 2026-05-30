@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Students</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Students details!</h1>
+    <div class="container">
+         <% for(student of students) { %> 
+            <div class="students">
+            <h3 class="name"> Name: <%= student.name %></h3>
+            <p class="age">Age: <%= student.age %></p>
+            <p class="course">Couse: <%= student.course %></p>
+            <p class="id"> Id: <%= student.id %></p>
+            <a href="/students/<%=student.id%>/edit">Edit</a>
+            <form method="post" action="/students/<%=student.id%>?_method=DELETE">
+                <button class="delete">Delete Post</button>
+            </form>
+            </div>
+        <% } %>
+        <a  class="add-new" href="/students/new">Add new student</a>
+    </div>
+   
+</body>
+</html>
